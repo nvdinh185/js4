@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <script src="validation.js"></script>
+</head>
+
+<body>
+    <form action="javascript:void(0);" id="form-1">
+        <div class="form-group">
+            <label for="fullname" class="form-label">Fullname:</label>
+            <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Nhập họ tên" />
+            <span class="form-message"></span>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="email@example.com" />
+            <span class="form-message"></span>
+        </div>
+    </form>
+    <script>
+        Validator({
+            form: "#form-1",
+            rules: [
+                Validator.isRequired("#fullname"),
+                Validator.isRequired("#email"),
+                Validator.isEmail("#email"),
+            ]
+        });
+
+        // Validator2(Validator2.myMethod());
+
+    </script>
+</body>
+
+</html>
